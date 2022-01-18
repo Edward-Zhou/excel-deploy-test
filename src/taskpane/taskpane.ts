@@ -1,3 +1,5 @@
+import { MeekouApi } from "../services/meekouapi";
+
 /*
  * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
  * See LICENSE in the project root for license information.
@@ -13,6 +15,8 @@ Office.initialize = () => {
 };
 
 export async function run() {
+  let api: MeekouApi = new MeekouApi();
+  api.Test("hello");
   try {
     await Excel.run(async (context) => {
       /**

@@ -1,5 +1,5 @@
 export class MeekouApi {
-    public async function Test(params:string) {
+    async Test(params:string) {
         console.log(params);
     }
 }

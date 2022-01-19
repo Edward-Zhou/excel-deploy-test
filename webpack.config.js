@@ -25,6 +25,7 @@ module.exports = async (env, options) => {
       functions: "./src/functions/functions.ts",
       taskpane: "./src/taskpane/taskpane.ts",
       commands: "./src/commands/commands.ts",
+      dialog: "./src/dialog/dialog.ts",
     },
     output: {
       devtoolModuleFilenameTemplate: "webpack:///[resource-path]?[loaders]",
@@ -73,6 +74,11 @@ module.exports = async (env, options) => {
         filename: "taskpane.html",
         template: "./src/taskpane/taskpane.html",
         chunks: ["polyfill", "taskpane", "commands", "functions"],
+      }),
+      new HtmlWebpackPlugin({
+        filename: "dialog.html",
+        template: "./src/dialog/dialog.html",
+        chunks: ["polyfill", "dialog"],
       }),
       new CopyWebpackPlugin({
         patterns: [
